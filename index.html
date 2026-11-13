@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Greenline Sports Builders — Stadium & Sports Infrastructure</title>
+<meta name="description" content="Greenline Sports Builders designs and builds cricket stadiums, turf wickets, football arenas, synthetic tracks and multi-sport complexes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#06140d; --pitch:#0b2a1a; --turf:#12422a; --grass:#1d6b40;
+  --lime:#4fc95a; --lime-d:#2f9e3f; --clay:#d9a35b; --white:#f4f8f2; --mute:#9db5a6;
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--ink);color:var(--white);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+h1,h2,h3,.display{font-family:'Bebas Neue',Impact,sans-serif;letter-spacing:.02em;line-height:.95;font-weight:400}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--lime)}
+.eyebrow::before{content:"";width:28px;height:3px;background:var(--lime);transform:skewX(-20deg)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;font-weight:700;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;transition:.25s;cursor:pointer;border:0}
+.btn-lime{background:var(--lime);color:var(--ink);box-shadow:0 10px 30px -8px rgba(79,201,90,.55)}
+.btn-lime:hover{transform:translateY(-2px);background:#6ad874}
+.btn-ghost{border:2px solid rgba(244,248,242,.3);color:var(--white)}
+.btn-ghost:hover{border-color:var(--lime);color:var(--lime)}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:.3s}
+nav.scrolled{background:rgba(6,20,13,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(79,201,90,.12)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:12px;font-family:'Bebas Neue';font-size:1.5rem;letter-spacing:.04em;white-space:nowrap}
+.logo-mark{width:84px;height:55px}
+.logo span{color:var(--lime);margin-left:6px}
+.links{display:flex;gap:clamp(16px,2.2vw,32px);font-weight:600;font-size:.9rem}
+.links a{position:relative;opacity:.85}
+.links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--lime);transition:.25s}
+.links a:hover{opacity:1}.links a:hover::after{width:100%}
+.burger{display:none;background:none;border:0;color:var(--white);font-size:1.8rem;cursor:pointer}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;
+  background:radial-gradient(ellipse 80% 60% at 70% 110%,rgba(29,107,64,.9),transparent 70%),
+             radial-gradient(ellipse 60% 50% at 15% 0%,rgba(79,201,90,.12),transparent 60%),var(--ink)}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 80px,rgba(255,255,255,.025) 80px 160px);mask:linear-gradient(to top,#000 0,transparent 60%)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding-top:90px;padding-bottom:60px}
+.hero h1{font-size:clamp(3.4rem,8.5vw,7.4rem);margin:20px 0 22px}
+.hero h1 em{font-style:normal;color:var(--lime);display:block}
+.hero h1 .outline{-webkit-text-stroke:2px var(--white);color:transparent}
+.hero p.lead{font-size:1.12rem;color:var(--mute);max-width:520px;margin-bottom:34px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.stadium{width:100%;height:auto;filter:drop-shadow(0 30px 60px rgba(0,0,0,.5))}
+.flare{animation:flare 3s ease-in-out infinite}
+@keyframes flare{50%{opacity:.55}}
+.ball{animation:ball 4s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes ball{0%{transform:translate(0,0)}50%{transform:translate(150px,-70px)}100%{transform:translate(300px,0)}}
+.ticker{position:absolute;bottom:0;left:0;right:0;background:var(--lime);color:var(--ink);transform:skewY(-1.5deg);transform-origin:left;padding:14px 0;overflow:hidden;white-space:nowrap}
+.ticker-track{display:inline-flex;gap:48px;animation:tick 30s linear infinite;font-family:'Bebas Neue';font-size:1.6rem;letter-spacing:.06em}
+.ticker-track span::after{content:"✦";margin-left:48px}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* STATS */
+.stats{padding:110px 0 70px}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stat{background:linear-gradient(160deg,var(--pitch),rgba(11,42,26,.4));border:1px solid rgba(79,201,90,.12);border-radius:var(--radius);padding:30px 26px;position:relative;overflow:hidden}
+.stat::after{content:"";position:absolute;right:-30px;top:-30px;width:100px;height:100px;border:14px solid rgba(79,201,90,.07);border-radius:50%}
+.stat b{font-family:'Bebas Neue';font-size:3.6rem;color:var(--lime);font-weight:400;line-height:1}
+.stat small{display:block;color:var(--mute);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:.74rem;margin-top:6px}
+
+/* SECTION HEAD */
+section{position:relative}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:50px;flex-wrap:wrap}
+.head h2{font-size:clamp(2.6rem,5.5vw,4.6rem);margin-top:14px}
+.head p{color:var(--mute);max-width:420px}
+
+/* SERVICES */
+.services{padding:70px 0 110px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{background:var(--pitch);border-radius:var(--radius);padding:34px 30px;border:1px solid rgba(255,255,255,.06);transition:.35s;position:relative;overflow:hidden}
+.svc::before{content:"";position:absolute;inset:auto 0 0 0;height:4px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:.35s}
+.svc:hover{transform:translateY(-6px);border-color:rgba(79,201,90,.3);background:var(--turf)}
+.svc:hover::before{transform:scaleX(1)}
+.svc .ico{width:58px;height:58px;border-radius:14px;background:rgba(79,201,90,.1);display:grid;place-items:center;margin-bottom:22px}
+.svc .ico svg{width:30px;height:30px;stroke:var(--lime);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.svc h3{font-size:1.9rem;margin-bottom:10px}
+.svc p{color:var(--mute);font-size:.95rem}
+.svc .num{position:absolute;right:22px;top:16px;font-family:'Bebas Neue';font-size:3rem;color:rgba(255,255,255,.05)}
+.svc.feature{grid-column:span 2;background:linear-gradient(120deg,var(--grass),var(--turf));display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:center}
+.svc.feature ul{list-style:none;display:grid;gap:10px}
+.svc.feature li{display:flex;gap:10px;font-weight:600;font-size:.95rem}
+.svc.feature li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:50%;background:var(--lime) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2306140d' stroke-width='4'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/11px no-repeat}
+.svc.feature p{color:#d6e9dc}
+
+/* PROCESS */
+.process{padding:110px 0;background:linear-gradient(180deg,var(--pitch),var(--ink))}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;counter-reset:s;position:relative}
+.steps::before{content:"";position:absolute;top:34px;left:6%;right:6%;height:2px;background:repeating-linear-gradient(90deg,var(--lime) 0 10px,transparent 10px 20px);opacity:.4}
+.step{text-align:center;position:relative}
+.step .dot{width:68px;height:68px;margin:0 auto 20px;border-radius:50%;background:var(--ink);border:2px solid var(--lime);display:grid;place-items:center;font-family:'Bebas Neue';font-size:1.8rem;color:var(--lime);transition:.3s}
+.step:hover .dot{background:var(--lime);color:var(--ink);transform:scale(1.08)}
+.step h3{font-size:1.5rem;margin-bottom:6px}
+.step p{font-size:.88rem;color:var(--mute)}
+
+/* PROJECTS */
+.projects{padding:110px 0}
+.filters{display:flex;gap:10px;flex-wrap:wrap}
+.filters button{background:transparent;border:1.5px solid rgba(255,255,255,.18);color:var(--white);padding:9px 18px;border-radius:999px;font:600 .82rem Inter;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:.2s}
+.filters button.on,.filters button:hover{background:var(--lime);border-color:var(--lime);color:var(--ink)}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.proj{border-radius:var(--radius);overflow:hidden;position:relative;aspect-ratio:4/3.3;cursor:pointer;transition:.35s}
+.proj.hide{display:none}
+.proj svg{width:100%;height:100%;display:block;transition:transform .6s}
+.proj:hover svg{transform:scale(1.07)}
+.proj .cap{position:absolute;inset:auto 0 0 0;padding:24px;background:linear-gradient(transparent,rgba(6,20,13,.95))}
+.proj .tag{display:inline-block;background:var(--lime);color:var(--ink);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:8px}
+.proj h3{font-size:1.75rem}
+.proj small{color:var(--mute);font-weight:500}
+.proj.big{grid-column:span 2}
+.proj.big{aspect-ratio:auto}
+
+/* WHY */
+.why{padding:110px 0;background:var(--lime);color:var(--ink);clip-path:polygon(0 4%,100% 0,100% 96%,0 100%)}
+.why .eyebrow{color:var(--ink)}.why .eyebrow::before{background:var(--ink)}
+.why-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center}
+.why h2{font-size:clamp(2.8rem,6vw,5.2rem);margin:16px 0 20px}
+.why p{font-weight:500;max-width:440px}
+.why-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.why-item{background:var(--ink);color:var(--white);border-radius:var(--radius);padding:26px}
+.why-item h3{font-size:1.5rem;color:var(--lime);margin-bottom:6px}
+.why-item p{color:var(--mute);font-size:.9rem;font-weight:400}
+
+/* TESTIMONIAL */
+.testi{padding:120px 0 100px}
+.quote-card{max-width:900px;margin:0 auto;text-align:center;position:relative}
+.quote-card .mark{font-family:'Bebas Neue';font-size:9rem;line-height:.6;color:var(--lime);opacity:.9}
+.quote{font-size:clamp(1.3rem,2.6vw,1.9rem);font-weight:500;line-height:1.45;min-height:150px;transition:opacity .4s}
+.who{margin-top:24px;color:var(--mute);font-weight:600}
+.who b{color:var(--white);display:block;font-size:1.05rem}
+.dots{display:flex;gap:10px;justify-content:center;margin-top:26px}
+.dots button{width:34px;height:5px;border-radius:4px;border:0;background:rgba(255,255,255,.2);cursor:pointer;transition:.3s}
+.dots button.on{background:var(--lime);width:54px}
+
+/* CTA / CONTACT */
+.contact{padding:60px 0 110px}
+.contact-box{display:grid;grid-template-columns:1fr 1.1fr;border-radius:28px;overflow:hidden;background:var(--pitch);border:1px solid rgba(79,201,90,.15)}
+.contact-info{padding:54px 48px;background:radial-gradient(circle at 0 100%,rgba(79,201,90,.18),transparent 60%),var(--turf)}
+.contact-info h2{font-size:clamp(2.6rem,5vw,4rem);margin:14px 0 18px}
+.contact-info p{color:#cfe2d6;margin-bottom:30px}
+.ci{display:flex;gap:14px;align-items:center;overflow-wrap:anywhere;margin-bottom:16px;font-weight:600}
+.ci i{flex:none;width:42px;height:42px;border-radius:12px;background:rgba(6,20,13,.5);display:grid;place-items:center;font-style:normal;color:var(--lime)}
+form{padding:54px 48px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form .full{grid-column:1/-1}
+label{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:6px}
+input,select,textarea{width:100%;background:var(--ink);border:1.5px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;color:var(--white);font:500 .95rem Inter;transition:.2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--lime)}
+textarea{min-height:120px;resize:vertical}
+.sent{grid-column:1/-1;color:var(--lime);font-weight:600;display:none}
+
+footer{border-top:1px solid rgba(255,255,255,.08);padding:60px 0 30px}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px}
+.foot h4{font-family:'Bebas Neue';font-size:1.3rem;letter-spacing:.06em;color:var(--lime);margin-bottom:14px;font-weight:400}
+.foot ul{list-style:none;display:grid;gap:8px;color:var(--mute);font-size:.92rem}
+.foot ul a:hover{color:var(--white)}
+.foot p{color:var(--mute);font-size:.92rem;margin-top:14px;max-width:300px}
+.copy{margin-top:46px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;color:var(--mute);font-size:.82rem;flex-wrap:wrap;gap:10px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:960px){
+  .links{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;gap:0;background:rgba(6,20,13,.97);padding:10px 24px 20px}
+  .links.open{display:flex}.links a{padding:12px 0}
+  .burger{display:block}
+  nav .btn{display:none}
+  .hero-grid,.why-grid,.contact-box,.svc.feature{grid-template-columns:1fr}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .svc-grid,.proj-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr;row-gap:36px}.steps::before{display:none}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  .hero-grid{padding-top:120px}
+  .ci{font-size:.86rem;gap:12px}
+  .logo{font-size:1.35rem;gap:8px}.logo-mark{width:62px;height:40px}
+  .svc-grid,.proj-grid,.why-list,.steps{grid-template-columns:1fr}
+  .svc.feature,.proj.big{grid-column:auto}
+  .proj.big{aspect-ratio:4/3.3}
+  form{grid-template-columns:1fr;padding:34px 22px}.contact-info{padding:40px 22px}
+  .foot{grid-template-columns:1fr}
+  .stat b{font-size:2.8rem}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute"><symbol id="lg" viewBox="0 0 200 130">
+<path d="M10 104C16 48 184 48 190 104" fill="none" stroke="#1f8a3a" stroke-width="6"/>
+<path d="M22 104C28 60 172 60 178 104" fill="none" stroke="#1f8a3a" stroke-width="3"/>
+<g fill="#aeb8b2">
+<polygon points="58,40 86,27 86,45 58,45"/><polygon points="113,27 142,40 142,45 113,45"/>
+<polygon points="58,97 87,97 87,109 58,102"/><polygon points="90,97 112,97 112,112 100,122 90,117"/><polygon points="115,97 142,97 142,102 115,111"/>
+</g>
+<polygon points="89,25.5 100,20.5 110,25.5 110,45 89,45" fill="#3fb54b"/>
+<rect x="58" y="49" width="84" height="44" fill="#3fb54b"/>
+<polygon points="116,49 124,49 142,90 142,93 116,93" fill="#aeb8b2"/>
+<g stroke="#fff" stroke-width="2.4"><path d="M95 63v13M100 63v13M105 63v13"/></g>
+</symbol></svg>
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo">
+      <svg class="logo-mark" viewBox="0 0 200 130" aria-hidden="true"><use href="#lg"/></svg>
+      GREENLINE<span>SPORTS BUILDERS</span>
+    </a>
+    <div class="links" id="links">
+      <a href="#services">Services</a><a href="#process">Process</a><a href="#projects">Projects</a><a href="#why">Why Us</a><a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="btn btn-lime">Get a Quote</a>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Sports Infrastructure Experts</span>
+      <h1>We Build<br><span class="outline">Where Legends</span><em>Are Made.</em></h1>
+      <p class="lead">From international-standard cricket stadiums and turf wickets to football arenas, athletic tracks and multi-sport complexes — Greenline Sports Builders delivers venues engineered for peak performance.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-lime">Start Your Project →</a>
+        <a href="#projects" class="btn btn-ghost">View Our Work</a>
+      </div>
+    </div>
+    <!-- Stadium illustration -->
+    <svg class="stadium" viewBox="0 0 560 440" aria-label="Illustration of a cricket stadium at night">
+      <defs>
+        <radialGradient id="g1" cx="50%" cy="55%" r="55%"><stop offset="0" stop-color="#2f9a5a"/><stop offset="1" stop-color="#14502f"/></radialGradient>
+        <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6ffd6" stop-opacity=".55"/><stop offset="1" stop-color="#f6ffd6" stop-opacity="0"/></linearGradient>
+        <linearGradient id="stand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c3d2b"/><stop offset="1" stop-color="#0b2318"/></linearGradient>
+      </defs>
+      <!-- beams -->
+      <polygon class="flare" points="62,58 30,62 210,330 330,330" fill="url(#beam)"/>
+      <polygon class="flare" points="498,58 530,62 350,330 230,330" fill="url(#beam)" style="animation-delay:1.5s"/>
+      <!-- stands -->
+      <ellipse cx="280" cy="300" rx="270" ry="130" fill="url(#stand)"/>
+      <ellipse cx="280" cy="300" rx="270" ry="130" fill="none" stroke="#4fc95a" stroke-opacity=".25" stroke-width="2"/>
+      <g stroke="#4fc95a" stroke-opacity=".12" fill="none">
+        <ellipse cx="280" cy="302" rx="250" ry="118"/><ellipse cx="280" cy="304" rx="232" ry="108"/><ellipse cx="280" cy="306" rx="216" ry="99"/>
+      </g>
+      <!-- field -->
+      <ellipse cx="280" cy="310" rx="198" ry="88" fill="url(#g1)"/>
+      <g opacity=".18" fill="#0d3f24">
+        <path d="M120 310a160 70 0 0 1 40-40h20a150 70 0 0 0-30 40z"/>
+      </g>
+      <ellipse cx="280" cy="310" rx="178" ry="78" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="3 5"/>
+      <ellipse cx="280" cy="310" rx="80" ry="35" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.2"/>
+      <!-- pitch -->
+      <rect x="268" y="280" width="24" height="60" rx="2" fill="#d9b77a"/>
+      <path d="M268 288h24M268 332h24" stroke="#fff" stroke-width="1.4"/>
+      <g fill="#fff"><rect x="276" y="282" width="2" height="6"/><rect x="279" y="282" width="2" height="6"/><rect x="282" y="282" width="2" height="6"/>
+      <rect x="276" y="333" width="2" height="7"/><rect x="279" y="333" width="2" height="7"/><rect x="282" y="333" width="2" height="7"/></g>
+      <!-- ball -->
+      <g class="ball"><circle cx="130" cy="250" r="6" fill="#e0332f"/><path d="M125 248q5 3 10 0" stroke="#fff" stroke-width="1" fill="none"/></g>
+      <!-- floodlights -->
+      <g>
+        <path d="M46 72 L56 300" stroke="#cfd8d2" stroke-width="5"/><path d="M514 72 L504 300" stroke="#cfd8d2" stroke-width="5"/>
+        <rect x="22" y="38" width="56" height="34" rx="4" fill="#26372d" stroke="#4fc95a" stroke-width="2"/>
+        <rect x="482" y="38" width="56" height="34" rx="4" fill="#26372d" stroke="#4fc95a" stroke-width="2"/>
+        <g fill="#fbffe8">
+          <circle cx="34" cy="49" r="4"/><circle cx="46" cy="49" r="4"/><circle cx="58" cy="49" r="4"/><circle cx="70" cy="49" r="3.5"/>
+          <circle cx="34" cy="61" r="4"/><circle cx="46" cy="61" r="4"/><circle cx="58" cy="61" r="4"/><circle cx="70" cy="61" r="3.5"/>
+          <circle cx="490" cy="49" r="3.5"/><circle cx="502" cy="49" r="4"/><circle cx="514" cy="49" r="4"/><circle cx="526" cy="49" r="4"/>
+          <circle cx="490" cy="61" r="3.5"/><circle cx="502" cy="61" r="4"/><circle cx="514" cy="61" r="4"/><circle cx="526" cy="61" r="4"/>
+        </g>
+      </g>
+      <!-- scoreboard -->
+      <rect x="220" y="96" width="120" height="52" rx="6" fill="#0b1f15" stroke="#4fc95a" stroke-width="2"/>
+      <text x="280" y="118" text-anchor="middle" font-family="Bebas Neue" font-size="15" fill="#9db5a6">BUILT TO ICC SPEC</text>
+      <text x="280" y="140" text-anchor="middle" font-family="Bebas Neue" font-size="20" fill="#4fc95a">GREENLINE · 2026</text>
+      <path d="M280 148v26" stroke="#cfd8d2" stroke-width="3"/>
+    </svg>
+  </div>
+  <div class="ticker"><div class="ticker-track">
+    <span>Cricket Stadiums</span><span>Turf Wickets</span><span>Football Arenas</span><span>Synthetic Tracks</span><span>Floodlighting</span><span>Indoor Academies</span><span>Multi-Sport Complexes</span>
+    <span>Cricket Stadiums</span><span>Turf Wickets</span><span>Football Arenas</span><span>Synthetic Tracks</span><span>Floodlighting</span><span>Indoor Academies</span><span>Multi-Sport Complexes</span>
+  </div></div>
+</header>
+
+<section class="stats">
+  <div class="wrap stat-grid">
+    <div class="stat rv"><b data-n="120">0</b><b>+</b><small>Venues Delivered</small></div>
+    <div class="stat rv"><b data-n="18">0</b><small>Years On The Field</small></div>
+    <div class="stat rv"><b data-n="45">0</b><b>K</b><small>Seating Capacity Built</small></div>
+    <div class="stat rv"><b data-n="12">0</b><small>Sports Disciplines</small></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="head rv">
+      <div><span class="eyebrow">What We Build</span><h2>Every Surface.<br>Every Sport.</h2></div>
+      <p>Turnkey design-and-build for sports venues of every scale — from a single club net to a full international stadium.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc feature rv">
+        <div>
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 20 15 9"/><path d="m14 5 5 5-3 3-5-5z"/><circle cx="6" cy="6" r="2.5"/></svg></div>
+          <h3>Cricket Stadiums & Grounds</h3>
+          <p>Our signature. Complete cricket venues — outfield, square, sightscreens, pavilions and seating — built to international playing standards.</p>
+        </div>
+        <ul>
+          <li>Natural turf wicket squares</li><li>Sand-based outfields with drainage</li><li>Practice nets & bowling machines</li><li>Pavilions, dressing rooms & media boxes</li><li>Sightscreens & digital scoreboards</li>
+        </ul>
+      </div>
+      <div class="svc rv"><span class="num">02</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m12 7 4 3-1.5 4.5h-5L8 10z"/></svg></div>
+        <h3>Football Arenas</h3><p>FIFA-quality natural & hybrid grass pitches, 5-a-side cages and full-size stadium bowls.</p></div>
+      <div class="svc rv"><span class="num">03</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 18c0-6 4-11 9-11s9 5 9 11"/><path d="M7 18c0-4 2-7 5-7s5 3 5 7"/></svg></div>
+        <h3>Synthetic Tracks</h3><p>IAAF-grade polyurethane running tracks, jump pits and throwing circles.</p></div>
+      <div class="svc rv"><span class="num">04</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2v4M4.9 4.9l2.8 2.8M2 12h4M19.1 4.9l-2.8 2.8M22 12h-4"/><circle cx="12" cy="13" r="4"/><path d="M12 17v5"/></svg></div>
+        <h3>Floodlighting</h3><p>Broadcast-ready LED lighting for day-night matches, with smart controls & low energy use.</p></div>
+      <div class="svc rv"><span class="num">05</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M12 4v16"/></svg></div>
+        <h3>Courts & Indoor Halls</h3><p>Tennis, basketball, badminton & volleyball courts plus indoor cricket academies.</p></div>
+      <div class="svc rv"><span class="num">06</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h3>Multi-Sport Complexes</h3><p>Masterplanned campuses for schools, universities, clubs and municipalities.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="head rv">
+      <div><span class="eyebrow">How We Play</span><h2>From Blueprint<br>To First Ball.</h2></div>
+      <p>One accountable team from first site visit to opening day — and beyond with ground maintenance.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="dot">01</div><h3>Site Survey</h3><p>Soil testing, drainage & orientation study.</p></div>
+      <div class="step rv"><div class="dot">02</div><h3>Design</h3><p>Architecture, 3D renders & spec sheets.</p></div>
+      <div class="step rv"><div class="dot">03</div><h3>Engineering</h3><p>Structures, seating, lighting & MEP.</p></div>
+      <div class="step rv"><div class="dot">04</div><h3>Build</h3><p>Civil works, turf laying & installations.</p></div>
+      <div class="step rv"><div class="dot">05</div><h3>Handover</h3><p>Certification, training & maintenance.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="wrap">
+    <div class="head rv">
+      <div><span class="eyebrow">Featured Work</span><h2>Our Home<br>Grounds.</h2></div>
+      <div class="filters" id="filters">
+        <button class="on" data-f="all">All</button><button data-f="cricket">Cricket</button><button data-f="football">Football</button><button data-f="multi">Multi-Sport</button>
+      </div>
+    </div>
+    <div class="proj-grid" id="pgrid">
+      <div class="proj big rv" data-c="cricket">
+        <svg viewBox="0 0 800 330" preserveAspectRatio="xMidYMid slice"><rect width="800" height="330" fill="#0f3a23"/><ellipse cx="400" cy="200" rx="360" ry="150" fill="#1f7a45"/><g fill="#22874c"><path d="M40 200h720v18H40zM60 160h680v18H60zM60 240h680v18H60z"/></g><ellipse cx="400" cy="200" rx="330" ry="130" fill="none" stroke="#fff" stroke-opacity=".5" stroke-dasharray="4 6"/><rect x="380" y="150" width="40" height="100" fill="#d9b77a"/><path d="M380 162h40M380 238h40" stroke="#fff" stroke-width="2"/><rect y="0" width="800" height="50" fill="#0a2618"/><g fill="#4fc95a" opacity=".5"><circle cx="60" cy="25" r="5"/><circle cx="740" cy="25" r="5"/></g></svg>
+        <div class="cap"><span class="tag">Cricket</span><h3>Riverside International Cricket Ground</h3><small>25,000 seats · Day-night floodlit</small></div>
+      </div>
+      <div class="proj rv" data-c="football">
+        <svg viewBox="0 0 400 330" preserveAspectRatio="xMidYMid slice"><rect width="400" height="330" fill="#1a6b3c"/><g fill="#1f7d46"><rect x="0" y="0" width="50" height="330"/><rect x="100" width="50" height="330"/><rect x="200" width="50" height="330"/><rect x="300" width="50" height="330"/></g><g stroke="#fff" stroke-opacity=".8" stroke-width="3" fill="none"><rect x="30" y="30" width="340" height="270"/><path d="M200 30v270"/><circle cx="200" cy="165" r="45"/><rect x="30" y="105" width="55" height="120"/><rect x="315" y="105" width="55" height="120"/></g></svg>
+        <div class="cap"><span class="tag">Football</span><h3>Metro Hybrid Arena</h3><small>Hybrid turf · 8,000 seats</small></div>
+      </div>
+      <div class="proj rv" data-c="multi">
+        <svg viewBox="0 0 400 330" preserveAspectRatio="xMidYMid slice"><rect width="400" height="330" fill="#1a5a37"/><rect x="40" y="50" width="320" height="230" rx="115" fill="#b5543a"/><rect x="72" y="82" width="256" height="166" rx="83" fill="#1f7a45"/><g stroke="#fff" stroke-opacity=".6" fill="none" stroke-width="1.5"><rect x="48" y="58" width="304" height="214" rx="107"/><rect x="56" y="66" width="288" height="198" rx="99"/><rect x="64" y="74" width="272" height="182" rx="91"/></g></svg>
+        <div class="cap"><span class="tag">Multi-Sport</span><h3>University Athletics Park</h3><small>8-lane track · Field events</small></div>
+      </div>
+      <div class="proj rv" data-c="cricket">
+        <svg viewBox="0 0 400 330" preserveAspectRatio="xMidYMid slice"><rect width="400" height="330" fill="#0c2b1b"/><g stroke="#4fc95a" stroke-opacity=".35" stroke-width="2"><path d="M40 40v260M120 40v260M200 40v260M280 40v260M360 40v260M40 40h320"/></g><g fill="#2a8b55"><rect x="52" y="60" width="56" height="240"/><rect x="132" y="60" width="56" height="240"/><rect x="212" y="60" width="56" height="240"/><rect x="292" y="60" width="56" height="240"/></g><g fill="#fff"><rect x="76" y="70" width="8" height="18"/><rect x="156" y="70" width="8" height="18"/><rect x="236" y="70" width="8" height="18"/><rect x="316" y="70" width="8" height="18"/></g></svg>
+        <div class="cap"><span class="tag">Cricket</span><h3>Elite Cricket Academy</h3><small>12 turf nets · Indoor hall</small></div>
+      </div>
+      <div class="proj rv" data-c="multi">
+        <svg viewBox="0 0 400 330" preserveAspectRatio="xMidYMid slice"><rect width="400" height="330" fill="#123a26"/><rect x="30" y="40" width="160" height="250" fill="#3a6fb0"/><rect x="210" y="40" width="160" height="250" fill="#c46a3a"/><g stroke="#fff" stroke-width="2.5" fill="none"><rect x="45" y="60" width="130" height="210"/><path d="M45 165h130M110 60v210"/><rect x="225" y="60" width="130" height="210"/><circle cx="290" cy="165" r="25"/><path d="M225 165h130"/></g></svg>
+        <div class="cap"><span class="tag">Multi-Sport</span><h3>Greenfield School Sports Hub</h3><small>Courts · Turf · Pavilion</small></div>
+      </div>
+      <div class="proj rv" data-c="football">
+        <svg viewBox="0 0 400 330" preserveAspectRatio="xMidYMid slice"><rect width="400" height="330" fill="#06140d"/><rect x="40" y="60" width="320" height="210" fill="#2b9455"/><g stroke="#4fc95a" stroke-width="2" opacity=".6"><path d="M40 60h320v210H40z"/><path d="M40 60v-30M360 60v-30M40 270v30M360 270v30" stroke-dasharray="3 4"/></g><g stroke="#fff" stroke-width="2.5" fill="none" opacity=".9"><path d="M200 60v210"/><circle cx="200" cy="165" r="30"/><rect x="40" y="125" width="35" height="80"/><rect x="325" y="125" width="35" height="80"/></g></svg>
+        <div class="cap"><span class="tag">Football</span><h3>Urban 5-a-Side Cages</h3><small>Rooftop · 3G artificial turf</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap why-grid">
+    <div class="rv">
+      <span class="eyebrow">Why Greenline</span>
+      <h2>Built By People Who Love The Game.</h2>
+      <p>We're engineers, agronomists and architects who grew up on the field. We know how a pitch should play, how a crowd should feel and how a venue should last.</p>
+      <br><a href="#contact" class="btn" style="background:var(--ink);color:var(--lime)">Talk To Our Team →</a>
+    </div>
+    <div class="why-list">
+      <div class="why-item rv"><h3>Turf Science</h3><p>In-house soil lab and pitch curators for true bounce and pace.</p></div>
+      <div class="why-item rv"><h3>Global Standards</h3><p>Designs aligned with ICC, FIFA and World Athletics guidelines.</p></div>
+      <div class="why-item rv"><h3>On-Time Delivery</h3><p>Fixed timelines with transparent milestone tracking.</p></div>
+      <div class="why-item rv"><h3>Lifetime Care</h3><p>Annual maintenance contracts to keep venues match-ready.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="testi">
+  <div class="wrap quote-card rv">
+    <div class="mark">“</div>
+    <p class="quote" id="quote"></p>
+    <div class="who" id="who"></div>
+    <div class="dots" id="dots"></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-box rv">
+      <div class="contact-info">
+        <span class="eyebrow">Let's Build</span>
+        <h2>Your Ground.<br>Our Game Plan.</h2>
+        <p>Tell us about your site and vision. Our team will get back within 24 hours with a free consultation.</p>
+        <div class="ci"><i>✉</i><span><a href="mailto:info@greenlinesb.com">info@greenlinesb.com</a><br><a href="mailto:greenlinesportsbuilders@gmail.com">greenlinesportsbuilders@gmail.com</a></span></div>
+        <div class="ci"><i>✦</i><a href="mailto:careers@greenlinesb.com">careers@greenlinesb.com</a></div>
+        <div class="ci"><i>☎</i><span><a href="tel:+919446584386">+91 94465 84386</a><br><a href="tel:+919633127193">+91 96331 27193</a></span></div>
+        <div class="ci"><i>⌖</i><span>No 16/959, 1st Floor, City Tower,<br>Wandoor, Malappuram, Kerala – 679328</span></div>
+        <div class="ci"><i>#</i><span>GSTIN: 32BURPP5425Q1ZU</span></div>
+      </div>
+      <form id="form">
+        <div><label for="n">Name</label><input id="n" required placeholder="Your name"></div>
+        <div><label for="o">Organisation</label><input id="o" placeholder="Club / School / Company"></div>
+        <div><label for="e">Email</label><input id="e" type="email" required placeholder="you@email.com"></div>
+        <div><label for="t">Project Type</label>
+          <select id="t"><option>Cricket Stadium / Ground</option><option>Turf Wicket / Nets</option><option>Football Pitch</option><option>Athletics Track</option><option>Courts / Indoor Hall</option><option>Multi-Sport Complex</option><option>Floodlighting</option></select></div>
+        <div class="full"><label for="m">Tell us about it</label><textarea id="m" placeholder="Location, size, timeline, budget…"></textarea></div>
+        <div class="full"><button class="btn btn-lime" type="submit">Send Enquiry →</button></div>
+        <p class="sent" id="sent">✓ Thanks! We'll be in touch shortly.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#top" class="logo"><svg class="logo-mark" viewBox="0 0 200 130" aria-hidden="true"><use href="#lg"/></svg>GREENLINE<span>SPORTS BUILDERS</span></a>
+        <p>Designing and building world-class cricket stadiums and sports venues.</p>
+      </div>
+      <div><h4>Services</h4><ul><li><a href="#services">Cricket Stadiums</a></li><li><a href="#services">Football Arenas</a></li><li><a href="#services">Athletic Tracks</a></li><li><a href="#services">Floodlighting</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#why">About Us</a></li><li><a href="#projects">Projects</a></li><li><a href="#process">Process</a></li><li><a href="mailto:careers@greenlinesb.com">Careers</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="mailto:info@greenlinesb.com">info@greenlinesb.com</a></li><li><a href="mailto:careers@greenlinesb.com">careers@greenlinesb.com</a></li><li><a href="mailto:greenlinesportsbuilders@gmail.com">greenlinesportsbuilders@gmail.com</a></li><li><a href="tel:+919446584386">+91 94465 84386</a></li><li><a href="tel:+919633127193">+91 96331 27193</a></li><li>City Tower, Wandoor, Malappuram,<br>Kerala – 679328</li></ul></div>
+    </div>
+    <div class="copy"><span>© <span id="yr"></span> Greenline Sports Builders. All rights reserved.</span><span>GSTIN: 32BURPP5425Q1ZU · greenlinesb.com</span></div>
+  </div>
+</footer>
+
+<script>
+// nav
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+const links=document.getElementById('links');
+document.getElementById('burger').onclick=()=>links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+
+// reveal + counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  e.target.classList.add('in');
+  e.target.querySelectorAll('[data-n]').forEach(el=>{
+    const n=+el.dataset.n,t0=performance.now();
+    const step=t=>{const p=Math.min((t-t0)/1600,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step)};
+    requestAnimationFrame(step);
+  });
+  io.unobserve(e.target);
+}),{threshold:.15});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
+
+// project filter
+document.getElementById('filters').onclick=e=>{
+  const b=e.target.closest('button');if(!b)return;
+  document.querySelectorAll('#filters button').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('.proj').forEach(p=>p.classList.toggle('hide',b.dataset.f!=='all'&&p.dataset.c!==b.dataset.f));
+};
+
+// testimonials (sample text — replace with real client quotes)
+const T=[
+  ["The square they prepared plays true from day one — pace, bounce and carry exactly as we asked. Our players love it.","Head Curator","State Cricket Association"],
+  ["On time, on budget, and the floodlights are stunning on broadcast. A genuinely professional team.","Project Director","Metro Sports Authority"],
+  ["They turned an empty plot into a full sports campus for our 3,000 students. Every detail was thought through.","Principal","Greenfield International School"]
+];
+const q=document.getElementById('quote'),w=document.getElementById('who'),d=document.getElementById('dots');let cur=0,timer;
+T.forEach((_,i)=>{const b=document.createElement('button');b.setAttribute('aria-label','Testimonial '+(i+1));b.onclick=()=>show(i,true);d.appendChild(b)});
+function show(i,user){cur=i;q.style.opacity=0;setTimeout(()=>{q.textContent=T[i][0];w.innerHTML='<b>'+T[i][1]+'</b>'+T[i][2];q.style.opacity=1},250);
+  [...d.children].forEach((b,j)=>b.classList.toggle('on',j===i));if(user){clearInterval(timer);timer=setInterval(()=>show((cur+1)%T.length),6000)}}
+show(0);timer=setInterval(()=>show((cur+1)%T.length),6000);
+
+// form (front-end only — hook to your email service/backend)
+document.getElementById('form').onsubmit=e=>{e.preventDefault();document.getElementById('sent').style.display='block';e.target.reset()};
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
