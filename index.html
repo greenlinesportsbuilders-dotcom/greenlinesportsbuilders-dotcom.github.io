@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Greenline Sports Builders — Stadium & Sports Infrastructure</title>
-<meta name="description" content="Greenline Sports Builders designs and builds cricket stadiums, turf wickets, football arenas, synthetic tracks and multi-sport complexes.">
+<meta name="description" content="Greenline Sports Builders – turnkey cricket turf grounds, wicket construction, practice nets, drainage, floodlighting and football grounds. Wandoor, Malappuram, Kerala.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@ h1,h2,h3,.display{font-family:'Bebas Neue',Impact,sans-serif;letter-spacing:.02e
 .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;font-weight:700;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;transition:.25s;cursor:pointer;border:0}
 .btn-lime{background:var(--lime);color:var(--ink);box-shadow:0 10px 30px -8px rgba(79,201,90,.55)}
 .btn-lime:hover{transform:translateY(-2px);background:#6ad874}
-.btn-ghost{border:2px solid rgba(244,248,242,.3);color:var(--white)}
+.btn-ghost{background:transparent;border:2px solid rgba(244,248,242,.3);color:var(--white)}
 .btn-ghost:hover{border-color:var(--lime);color:var(--lime)}
 
 /* NAV */
@@ -195,6 +195,72 @@ footer{border-top:1px solid rgba(255,255,255,.08);padding:60px 0 30px}
   .stat b{font-size:2.8rem}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+.stat h3{font-size:2rem;margin-top:8px}
+.hero-photo{position:relative;justify-self:center;width:min(100%,420px)}
+.hero-photo img{width:100%;height:auto;aspect-ratio:997/1400;object-fit:cover;border-radius:26px;border:3px solid rgba(79,201,90,.5);box-shadow:0 40px 80px -20px rgba(0,0,0,.7);transform:rotate(2deg)}
+.badge{position:absolute;background:var(--ink);border:1.5px solid var(--lime);border-radius:14px;padding:12px 16px;box-shadow:0 14px 30px rgba(0,0,0,.45)}
+.badge b{display:block;font-family:'Bebas Neue';font-weight:400;font-size:1.5rem;color:var(--lime);line-height:1}
+.badge span{font-size:.78rem;color:var(--mute);font-weight:600}
+.b1{left:-34px;top:16%}.b2{right:-24px;bottom:12%}
+.photo-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:20px}
+.photo{position:relative;margin:0;border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;background:var(--pitch)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.photo:hover img{transform:scale(1.05)}
+.photo figcaption{position:absolute;inset:auto 0 0 0;padding:22px;background:linear-gradient(transparent,rgba(6,20,13,.95))}
+.photo .tag{display:inline-block;background:var(--lime);color:var(--ink);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:8px}
+.photo h3{font-size:1.7rem}.photo small{color:#cfe2d6;font-weight:500}
+.proj-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.pl{background:var(--pitch);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);padding:22px 24px}
+.pl h3{font-size:1.5rem;margin:10px 0 2px}.pl small{color:var(--mute);font-weight:600}
+.st{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+.st.done{background:rgba(79,201,90,.15);color:var(--lime)}.st.wip{background:rgba(217,163,91,.15);color:var(--clay)}
+.ig-band{text-align:center;max-width:720px}
+.ig-ico svg{width:44px;height:44px;display:block}
+.ig-ico{width:84px;height:84px;margin:0 auto 18px;border-radius:24px;display:grid;place-items:center;color:var(--ink);background:linear-gradient(135deg,#4fc95a,#c6ff3d)}
+.ig-band h2{font-size:clamp(2.6rem,5vw,4rem)}.ig-band p{color:var(--mute);margin:10px auto 26px;max-width:520px}
+.btn svg,.ci svg,.ig-link svg{flex:none}
+.ig-link{display:inline-flex;gap:8px;align-items:center;margin-top:14px;color:var(--lime);font-weight:600;font-size:.92rem}
+@media (max-width:960px){.photo-grid{grid-template-columns:1fr 1fr}.photo.tall{grid-column:1/-1;aspect-ratio:4/3}.proj-list{grid-template-columns:1fr}.hero-photo{width:min(100%,360px);margin-top:10px}.b1{left:-8px}.b2{right:-8px}}
+@media (max-width:600px){.photo-grid{grid-template-columns:1fr}.photo,.photo.tall{aspect-ratio:4/5}}
+.pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pcard{background:var(--pitch);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:.35s}
+.pcard:hover{border-color:rgba(79,201,90,.4);transform:translateY(-4px)}
+.pc-img{display:block;border:0;padding:0;background:none;cursor:pointer;aspect-ratio:4/3;overflow:hidden}
+.pc-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform .6s}
+.pcard:hover .pc-img img{transform:scale(1.05)}
+.pc-body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.pcard .tag,.pm-text .tag{align-self:flex-start;display:inline-block;background:rgba(79,201,90,.14);color:var(--lime);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:6px}
+.pcard h3{font-size:1.9rem;margin:12px 0 4px}
+.loc{display:flex;gap:6px;align-items:flex-start;color:var(--mute);font-weight:600;font-size:.88rem}
+.loc svg{flex:none;margin-top:3px;color:var(--lime)}
+.sum{color:#cfe2d6;font-size:.93rem;margin:12px 0 18px}
+.pc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px;margin-top:auto}
+.pc-stats div{background:var(--ink);border-radius:12px;padding:10px 8px;text-align:center}
+.pc-stats b{display:block;font-family:'Bebas Neue';font-weight:400;font-size:1.35rem;color:var(--lime);line-height:1.05}
+.pc-stats small{font-size:.68rem;color:var(--mute);font-weight:600;line-height:1.25;display:block}
+.pc-more{align-self:flex-start;padding:11px 20px;font-size:.8rem}
+.building{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px;padding:16px 20px;border-radius:14px;border:1px dashed rgba(217,163,91,.4);font-weight:600}
+.building a{color:var(--lime);margin-left:auto}
+.sub-h{font-size:2.2rem;margin:60px 0 20px}
+.pmodal{margin:auto;border:0;padding:0;background:var(--pitch);color:var(--white);border-radius:22px;width:min(960px,calc(100% - 32px));max-height:calc(100vh - 40px);overflow:auto;box-shadow:0 40px 100px rgba(0,0,0,.6)}
+.pmodal::backdrop{background:rgba(3,10,6,.8);backdrop-filter:blur(4px)}
+.pm-close{position:sticky;top:12px;float:right;margin:12px 12px -52px 0;z-index:2;width:40px;height:40px;border-radius:50%;border:0;background:var(--ink);color:var(--white);font-size:1.1rem;cursor:pointer}
+.pm-close:hover{background:var(--lime);color:var(--ink)}
+.pm-img{width:100%;display:block}
+.pm-text{padding:30px 36px 40px;display:flex;flex-direction:column}
+.pm-text h2{font-size:clamp(2.2rem,4.5vw,3.4rem);margin:12px 0 6px}
+.pm-text p{color:#cfe2d6;margin-top:12px}
+.pm-text h4{font-family:'Bebas Neue';font-weight:400;font-size:1.6rem;color:var(--lime);margin:26px 0 8px;letter-spacing:.03em}
+.pm-text ul{list-style:none;display:grid;gap:8px}
+.pm-text li{position:relative;padding-left:22px;color:#e2efe6}
+.pm-text li::before{content:"";position:absolute;left:0;top:.6em;width:10px;height:3px;background:var(--lime);transform:skewX(-20deg)}
+.pm-meta{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 6px}
+.pm-meta div{background:var(--ink);border-radius:12px;padding:10px 14px}
+.pm-meta dt{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.pm-meta dd{font-weight:600;font-size:.92rem}
+#pm-cta{align-self:flex-start;margin-top:30px}
+@media (max-width:960px){.pcards{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.pcards{grid-template-columns:1fr}.pm-text{padding:24px 20px 32px}.building a{margin-left:0}}
 </style>
 </head>
 <body>
@@ -228,75 +294,31 @@ footer{border-top:1px solid rgba(255,255,255,.08);padding:60px 0 30px}
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Sports Infrastructure Experts</span>
+      <span class="eyebrow">Innovating Sports Infrastructure</span>
       <h1>We Build<br><span class="outline">Where Legends</span><em>Are Made.</em></h1>
-      <p class="lead">From international-standard cricket stadiums and turf wickets to football arenas, athletic tracks and multi-sport complexes — Greenline Sports Builders delivers venues engineered for peak performance.</p>
+      <p class="lead">High-performance surfaces for the modern athlete. We build premium cricket turf grounds end to end — earthworks, drainage, wickets, turf, fencing, lighting and finishing — for clubs, academies, schools and sports organisations.</p>
       <div class="hero-cta">
         <a href="#contact" class="btn btn-lime">Start Your Project →</a>
         <a href="#projects" class="btn btn-ghost">View Our Work</a>
       </div>
     </div>
-    <!-- Stadium illustration -->
-    <svg class="stadium" viewBox="0 0 560 440" aria-label="Illustration of a cricket stadium at night">
-      <defs>
-        <radialGradient id="g1" cx="50%" cy="55%" r="55%"><stop offset="0" stop-color="#2f9a5a"/><stop offset="1" stop-color="#14502f"/></radialGradient>
-        <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6ffd6" stop-opacity=".55"/><stop offset="1" stop-color="#f6ffd6" stop-opacity="0"/></linearGradient>
-        <linearGradient id="stand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c3d2b"/><stop offset="1" stop-color="#0b2318"/></linearGradient>
-      </defs>
-      <!-- beams -->
-      <polygon class="flare" points="62,58 30,62 210,330 330,330" fill="url(#beam)"/>
-      <polygon class="flare" points="498,58 530,62 350,330 230,330" fill="url(#beam)" style="animation-delay:1.5s"/>
-      <!-- stands -->
-      <ellipse cx="280" cy="300" rx="270" ry="130" fill="url(#stand)"/>
-      <ellipse cx="280" cy="300" rx="270" ry="130" fill="none" stroke="#4fc95a" stroke-opacity=".25" stroke-width="2"/>
-      <g stroke="#4fc95a" stroke-opacity=".12" fill="none">
-        <ellipse cx="280" cy="302" rx="250" ry="118"/><ellipse cx="280" cy="304" rx="232" ry="108"/><ellipse cx="280" cy="306" rx="216" ry="99"/>
-      </g>
-      <!-- field -->
-      <ellipse cx="280" cy="310" rx="198" ry="88" fill="url(#g1)"/>
-      <g opacity=".18" fill="#0d3f24">
-        <path d="M120 310a160 70 0 0 1 40-40h20a150 70 0 0 0-30 40z"/>
-      </g>
-      <ellipse cx="280" cy="310" rx="178" ry="78" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="3 5"/>
-      <ellipse cx="280" cy="310" rx="80" ry="35" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.2"/>
-      <!-- pitch -->
-      <rect x="268" y="280" width="24" height="60" rx="2" fill="#d9b77a"/>
-      <path d="M268 288h24M268 332h24" stroke="#fff" stroke-width="1.4"/>
-      <g fill="#fff"><rect x="276" y="282" width="2" height="6"/><rect x="279" y="282" width="2" height="6"/><rect x="282" y="282" width="2" height="6"/>
-      <rect x="276" y="333" width="2" height="7"/><rect x="279" y="333" width="2" height="7"/><rect x="282" y="333" width="2" height="7"/></g>
-      <!-- ball -->
-      <g class="ball"><circle cx="130" cy="250" r="6" fill="#e0332f"/><path d="M125 248q5 3 10 0" stroke="#fff" stroke-width="1" fill="none"/></g>
-      <!-- floodlights -->
-      <g>
-        <path d="M46 72 L56 300" stroke="#cfd8d2" stroke-width="5"/><path d="M514 72 L504 300" stroke="#cfd8d2" stroke-width="5"/>
-        <rect x="22" y="38" width="56" height="34" rx="4" fill="#26372d" stroke="#4fc95a" stroke-width="2"/>
-        <rect x="482" y="38" width="56" height="34" rx="4" fill="#26372d" stroke="#4fc95a" stroke-width="2"/>
-        <g fill="#fbffe8">
-          <circle cx="34" cy="49" r="4"/><circle cx="46" cy="49" r="4"/><circle cx="58" cy="49" r="4"/><circle cx="70" cy="49" r="3.5"/>
-          <circle cx="34" cy="61" r="4"/><circle cx="46" cy="61" r="4"/><circle cx="58" cy="61" r="4"/><circle cx="70" cy="61" r="3.5"/>
-          <circle cx="490" cy="49" r="3.5"/><circle cx="502" cy="49" r="4"/><circle cx="514" cy="49" r="4"/><circle cx="526" cy="49" r="4"/>
-          <circle cx="490" cy="61" r="3.5"/><circle cx="502" cy="61" r="4"/><circle cx="514" cy="61" r="4"/><circle cx="526" cy="61" r="4"/>
-        </g>
-      </g>
-      <!-- scoreboard -->
-      <rect x="220" y="96" width="120" height="52" rx="6" fill="#0b1f15" stroke="#4fc95a" stroke-width="2"/>
-      <text x="280" y="118" text-anchor="middle" font-family="Bebas Neue" font-size="15" fill="#9db5a6">BUILT TO ICC SPEC</text>
-      <text x="280" y="140" text-anchor="middle" font-family="Bebas Neue" font-size="20" fill="#4fc95a">GREENLINE · 2026</text>
-      <path d="M280 148v26" stroke="#cfd8d2" stroke-width="3"/>
-    </svg>
+    <div class="hero-photo">
+      <img src="images/floodlit-ground-aerial.jpg" alt="Aerial view of a floodlit cricket ground with pavilion built by Greenline Sports Builders" width="997" height="1400">
+      <div class="badge b1"><b>Turnkey</b><span>Design → Maintain</span></div>
+      <div class="badge b2"><b>Cricket</b><span>Turf grounds &amp; wickets</span></div>
+    </div>
   </div>
   <div class="ticker"><div class="ticker-track">
-    <span>Cricket Stadiums</span><span>Turf Wickets</span><span>Football Arenas</span><span>Synthetic Tracks</span><span>Floodlighting</span><span>Indoor Academies</span><span>Multi-Sport Complexes</span>
-    <span>Cricket Stadiums</span><span>Turf Wickets</span><span>Football Arenas</span><span>Synthetic Tracks</span><span>Floodlighting</span><span>Indoor Academies</span><span>Multi-Sport Complexes</span>
+    <span>Cricket Turf Grounds</span><span>Turf Wickets</span><span>Concrete Wickets</span><span>Practice Nets</span><span>Drainage Systems</span><span>Floodlighting</span><span>Football Grounds</span><span>Landscaping</span><span>Cricket Turf Grounds</span><span>Turf Wickets</span><span>Concrete Wickets</span><span>Practice Nets</span><span>Drainage Systems</span><span>Floodlighting</span><span>Football Grounds</span><span>Landscaping</span>
   </div></div>
 </header>
 
 <section class="stats">
   <div class="wrap stat-grid">
-    <div class="stat rv"><b data-n="120">0</b><b>+</b><small>Venues Delivered</small></div>
-    <div class="stat rv"><b data-n="18">0</b><small>Years On The Field</small></div>
-    <div class="stat rv"><b data-n="45">0</b><b>K</b><small>Seating Capacity Built</small></div>
-    <div class="stat rv"><b data-n="12">0</b><small>Sports Disciplines</small></div>
+    <div class="stat rv"><b>01</b><h3>Design</h3><small>Site assessment, levels &amp; layout</small></div>
+    <div class="stat rv"><b>02</b><h3>Construct</h3><small>Earthworks, drainage &amp; wickets</small></div>
+    <div class="stat rv"><b>03</b><h3>Landscape</h3><small>Turf installation &amp; finishing</small></div>
+    <div class="stat rv"><b>04</b><h3>Maintain</h3><small>Keeping grounds match-ready</small></div>
   </div>
 </section>
 
@@ -304,34 +326,34 @@ footer{border-top:1px solid rgba(255,255,255,.08);padding:60px 0 30px}
   <div class="wrap">
     <div class="head rv">
       <div><span class="eyebrow">What We Build</span><h2>Every Surface.<br>Every Sport.</h2></div>
-      <p>Turnkey design-and-build for sports venues of every scale — from a single club net to a full international stadium.</p>
+      <p>From a single practice net to a full cricket arena — designed, built and maintained by one team.</p>
     </div>
     <div class="svc-grid">
       <div class="svc feature rv">
         <div>
           <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 20 15 9"/><path d="m14 5 5 5-3 3-5-5z"/><circle cx="6" cy="6" r="2.5"/></svg></div>
-          <h3>Cricket Stadiums & Grounds</h3>
-          <p>Our signature. Complete cricket venues — outfield, square, sightscreens, pavilions and seating — built to international playing standards.</p>
+          <h3>Turnkey Cricket Turf Grounds</h3>
+          <p>Our speciality. We take your site from bare land to a professional-standard cricket ground — and keep it in shape afterwards.</p>
         </div>
         <ul>
-          <li>Natural turf wicket squares</li><li>Sand-based outfields with drainage</li><li>Practice nets & bowling machines</li><li>Pavilions, dressing rooms & media boxes</li><li>Sightscreens & digital scoreboards</li>
+          <li>Site preparation &amp; earthworks</li><li>Drainage systems</li><li>Wicket construction</li><li>Turf installation</li><li>Fencing, lighting &amp; finishing works</li>
         </ul>
       </div>
       <div class="svc rv"><span class="num">02</span>
-        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m12 7 4 3-1.5 4.5h-5L8 10z"/></svg></div>
-        <h3>Football Arenas</h3><p>FIFA-quality natural & hybrid grass pitches, 5-a-side cages and full-size stadium bowls.</p></div>
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="18" rx="1"/><path d="M9 7h6M9 17h6"/></svg></div>
+        <h3>Wicket Construction</h3><p>Professional turf wickets and durable concrete wickets, prepared for true pace and bounce.</p></div>
       <div class="svc rv"><span class="num">03</span>
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 18c0-6 4-11 9-11s9 5 9 11"/><path d="M7 18c0-4 2-7 5-7s5 3 5 7"/></svg></div>
-        <h3>Synthetic Tracks</h3><p>IAAF-grade polyurethane running tracks, jump pits and throwing circles.</p></div>
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 9h18M3 13h18M8 5v14M13 5v14"/></svg></div>
+        <h3>Practice Nets</h3><p>Netted practice lanes with wickets for academies, schools and clubs.</p></div>
       <div class="svc rv"><span class="num">04</span>
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2v4M4.9 4.9l2.8 2.8M2 12h4M19.1 4.9l-2.8 2.8M22 12h-4"/><circle cx="12" cy="13" r="4"/><path d="M12 17v5"/></svg></div>
-        <h3>Floodlighting</h3><p>Broadcast-ready LED lighting for day-night matches, with smart controls & low energy use.</p></div>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z"/></svg></div>
+        <h3>Advanced Drainage</h3><p>Sub-surface drainage so your ground is playable soon after the rain stops.</p></div>
       <div class="svc rv"><span class="num">05</span>
-        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M12 4v16"/></svg></div>
-        <h3>Courts & Indoor Halls</h3><p>Tennis, basketball, badminton & volleyball courts plus indoor cricket academies.</p></div>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2v4M4.9 4.9l2.8 2.8M2 12h4M19.1 4.9l-2.8 2.8M22 12h-4"/><circle cx="12" cy="13" r="4"/><path d="M12 17v5"/></svg></div>
+        <h3>Floodlighting</h3><p>Floodlighting and infrastructure works for evening practice and day-night matches.</p></div>
       <div class="svc rv"><span class="num">06</span>
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg></div>
-        <h3>Multi-Sport Complexes</h3><p>Masterplanned campuses for schools, universities, clubs and municipalities.</p></div>
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m12 7 4 3-1.5 4.5h-5L8 10z"/></svg></div>
+        <h3>Football Grounds</h3><p>Natural turf football fields built for performance and durability.</p></div>
     </div>
   </div>
 </section>
@@ -340,14 +362,14 @@ footer{border-top:1px solid rgba(255,255,255,.08);padding:60px 0 30px}
   <div class="wrap">
     <div class="head rv">
       <div><span class="eyebrow">How We Play</span><h2>From Blueprint<br>To First Ball.</h2></div>
-      <p>One accountable team from first site visit to opening day — and beyond with ground maintenance.</p>
+      <p>Every great ground starts with the right level. One team from the first site assessment to a lush green outfield.</p>
     </div>
     <div class="steps">
-      <div class="step rv"><div class="dot">01</div><h3>Site Survey</h3><p>Soil testing, drainage & orientation study.</p></div>
-      <div class="step rv"><div class="dot">02</div><h3>Design</h3><p>Architecture, 3D renders & spec sheets.</p></div>
-      <div class="step rv"><div class="dot">03</div><h3>Engineering</h3><p>Structures, seating, lighting & MEP.</p></div>
-      <div class="step rv"><div class="dot">04</div><h3>Build</h3><p>Civil works, turf laying & installations.</p></div>
-      <div class="step rv"><div class="dot">05</div><h3>Handover</h3><p>Certification, training & maintenance.</p></div>
+      <div class="step rv"><div class="dot">01</div><h3>Site Visit</h3><p>Assessment, soil &amp; levels survey.</p></div>
+      <div class="step rv"><div class="dot">02</div><h3>Design</h3><p>Layout, drainage &amp; wicket plan.</p></div>
+      <div class="step rv"><div class="dot">03</div><h3>Earthworks</h3><p>Levelling, drainage &amp; base layers.</p></div>
+      <div class="step rv"><div class="dot">04</div><h3>Build</h3><p>Wickets, turf, fencing &amp; lighting.</p></div>
+      <div class="step rv"><div class="dot">05</div><h3>Maintain</h3><p>Grass establishment &amp; upkeep.</p></div>
     </div>
   </div>
 </section>
@@ -355,36 +377,16 @@ footer{border-top:1px solid rgba(255,255,255,.08);padding:60px 0 30px}
 <section class="projects" id="projects">
   <div class="wrap">
     <div class="head rv">
-      <div><span class="eyebrow">Featured Work</span><h2>Our Home<br>Grounds.</h2></div>
-      <div class="filters" id="filters">
-        <button class="on" data-f="all">All</button><button data-f="cricket">Cricket</button><button data-f="football">Football</button><button data-f="multi">Multi-Sport</button>
-      </div>
+      <div><span class="eyebrow">Project Showcase</span><h2>Grounds We've<br>Built.</h2></div>
+      <a href="https://www.instagram.com/greenlinesportsbuilders/" target="_blank" rel="noopener" class="btn btn-ghost"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> More on Instagram</a>
     </div>
-    <div class="proj-grid" id="pgrid">
-      <div class="proj big rv" data-c="cricket">
-        <svg viewBox="0 0 800 330" preserveAspectRatio="xMidYMid slice"><rect width="800" height="330" fill="#0f3a23"/><ellipse cx="400" cy="200" rx="360" ry="150" fill="#1f7a45"/><g fill="#22874c"><path d="M40 200h720v18H40zM60 160h680v18H60zM60 240h680v18H60z"/></g><ellipse cx="400" cy="200" rx="330" ry="130" fill="none" stroke="#fff" stroke-opacity=".5" stroke-dasharray="4 6"/><rect x="380" y="150" width="40" height="100" fill="#d9b77a"/><path d="M380 162h40M380 238h40" stroke="#fff" stroke-width="2"/><rect y="0" width="800" height="50" fill="#0a2618"/><g fill="#4fc95a" opacity=".5"><circle cx="60" cy="25" r="5"/><circle cx="740" cy="25" r="5"/></g></svg>
-        <div class="cap"><span class="tag">Cricket</span><h3>Riverside International Cricket Ground</h3><small>25,000 seats · Day-night floodlit</small></div>
-      </div>
-      <div class="proj rv" data-c="football">
-        <svg viewBox="0 0 400 330" preserveAspectRatio="xMidYMid slice"><rect width="400" height="330" fill="#1a6b3c"/><g fill="#1f7d46"><rect x="0" y="0" width="50" height="330"/><rect x="100" width="50" height="330"/><rect x="200" width="50" height="330"/><rect x="300" width="50" height="330"/></g><g stroke="#fff" stroke-opacity=".8" stroke-width="3" fill="none"><rect x="30" y="30" width="340" height="270"/><path d="M200 30v270"/><circle cx="200" cy="165" r="45"/><rect x="30" y="105" width="55" height="120"/><rect x="315" y="105" width="55" height="120"/></g></svg>
-        <div class="cap"><span class="tag">Football</span><h3>Metro Hybrid Arena</h3><small>Hybrid turf · 8,000 seats</small></div>
-      </div>
-      <div class="proj rv" data-c="multi">
-        <svg viewBox="0 0 400 330" preserveAspectRatio="xMidYMid slice"><rect width="400" height="330" fill="#1a5a37"/><rect x="40" y="50" width="320" height="230" rx="115" fill="#b5543a"/><rect x="72" y="82" width="256" height="166" rx="83" fill="#1f7a45"/><g stroke="#fff" stroke-opacity=".6" fill="none" stroke-width="1.5"><rect x="48" y="58" width="304" height="214" rx="107"/><rect x="56" y="66" width="288" height="198" rx="99"/><rect x="64" y="74" width="272" height="182" rx="91"/></g></svg>
-        <div class="cap"><span class="tag">Multi-Sport</span><h3>University Athletics Park</h3><small>8-lane track · Field events</small></div>
-      </div>
-      <div class="proj rv" data-c="cricket">
-        <svg viewBox="0 0 400 330" preserveAspectRatio="xMidYMid slice"><rect width="400" height="330" fill="#0c2b1b"/><g stroke="#4fc95a" stroke-opacity=".35" stroke-width="2"><path d="M40 40v260M120 40v260M200 40v260M280 40v260M360 40v260M40 40h320"/></g><g fill="#2a8b55"><rect x="52" y="60" width="56" height="240"/><rect x="132" y="60" width="56" height="240"/><rect x="212" y="60" width="56" height="240"/><rect x="292" y="60" width="56" height="240"/></g><g fill="#fff"><rect x="76" y="70" width="8" height="18"/><rect x="156" y="70" width="8" height="18"/><rect x="236" y="70" width="8" height="18"/><rect x="316" y="70" width="8" height="18"/></g></svg>
-        <div class="cap"><span class="tag">Cricket</span><h3>Elite Cricket Academy</h3><small>12 turf nets · Indoor hall</small></div>
-      </div>
-      <div class="proj rv" data-c="multi">
-        <svg viewBox="0 0 400 330" preserveAspectRatio="xMidYMid slice"><rect width="400" height="330" fill="#123a26"/><rect x="30" y="40" width="160" height="250" fill="#3a6fb0"/><rect x="210" y="40" width="160" height="250" fill="#c46a3a"/><g stroke="#fff" stroke-width="2.5" fill="none"><rect x="45" y="60" width="130" height="210"/><path d="M45 165h130M110 60v210"/><rect x="225" y="60" width="130" height="210"/><circle cx="290" cy="165" r="25"/><path d="M225 165h130"/></g></svg>
-        <div class="cap"><span class="tag">Multi-Sport</span><h3>Greenfield School Sports Hub</h3><small>Courts · Turf · Pavilion</small></div>
-      </div>
-      <div class="proj rv" data-c="football">
-        <svg viewBox="0 0 400 330" preserveAspectRatio="xMidYMid slice"><rect width="400" height="330" fill="#06140d"/><rect x="40" y="60" width="320" height="210" fill="#2b9455"/><g stroke="#4fc95a" stroke-width="2" opacity=".6"><path d="M40 60h320v210H40z"/><path d="M40 60v-30M360 60v-30M40 270v30M360 270v30" stroke-dasharray="3 4"/></g><g stroke="#fff" stroke-width="2.5" fill="none" opacity=".9"><path d="M200 60v210"/><circle cx="200" cy="165" r="30"/><rect x="40" y="125" width="35" height="80"/><rect x="325" y="125" width="35" height="80"/></g></svg>
-        <div class="cap"><span class="tag">Football</span><h3>Urban 5-a-Side Cages</h3><small>Rooftop · 3G artificial turf</small></div>
-      </div>
+    <div class="pcards" id="pcards"></div>
+    <div class="building rv"><span class="st wip">Now Building</span><span>Iritty Ground Project, Kannur</span><a href="https://www.instagram.com/greenlinesportsbuilders/" target="_blank" rel="noopener">Follow progress →</a></div>
+    <h3 class="sub-h rv">From The Field</h3>
+    <div class="photo-grid">
+      <figure class="photo tall rv"><img src="images/floodlit-ground-aerial.jpg" alt="Aerial view of a floodlit cricket ground with pavilion and scoreboard" loading="lazy"><figcaption><span class="tag">Cricket Ground</span><h3>Floodlit Cricket Arena</h3><small>Turf outfield · Floodlights · Pavilion</small></figcaption></figure>
+      <figure class="photo rv"><img src="images/ground-aerial-round.jpg" alt="Aerial view of a newly built circular cricket turf ground with central pitch" loading="lazy"><figcaption><span class="tag">Cricket Ground</span><h3>Turf Cricket Ground</h3><small>Earthworks · Turf · Wicket · Fencing</small></figcaption></figure>
+      <figure class="photo rv"><img src="images/practice-net.jpg" alt="Green netted cricket practice lane with wicket, ready for inauguration" loading="lazy"><figcaption><span class="tag">Practice Nets</span><h3>Cricket Practice Net</h3><small>Netted lane · Concrete wicket</small></figcaption></figure>
     </div>
   </div>
 </section>
@@ -393,25 +395,25 @@ footer{border-top:1px solid rgba(255,255,255,.08);padding:60px 0 30px}
   <div class="wrap why-grid">
     <div class="rv">
       <span class="eyebrow">Why Greenline</span>
-      <h2>Built By People Who Love The Game.</h2>
-      <p>We're engineers, agronomists and architects who grew up on the field. We know how a pitch should play, how a crowd should feel and how a venue should last.</p>
+      <h2>Built With Precision. Designed For The Game.</h2>
+      <p>Great grounds aren't built overnight — they're built with precision, patience and passion. We bring that to every ground, from a single net to a full arena.</p>
       <br><a href="#contact" class="btn" style="background:var(--ink);color:var(--lime)">Talk To Our Team →</a>
     </div>
     <div class="why-list">
-      <div class="why-item rv"><h3>Turf Science</h3><p>In-house soil lab and pitch curators for true bounce and pace.</p></div>
-      <div class="why-item rv"><h3>Global Standards</h3><p>Designs aligned with ICC, FIFA and World Athletics guidelines.</p></div>
-      <div class="why-item rv"><h3>On-Time Delivery</h3><p>Fixed timelines with transparent milestone tracking.</p></div>
-      <div class="why-item rv"><h3>Lifetime Care</h3><p>Annual maintenance contracts to keep venues match-ready.</p></div>
+      <div class="why-item rv"><h3>Premium Materials</h3><p>Quality turf, soil and fittings chosen to last through every season.</p></div>
+      <div class="why-item rv"><h3>Professional Standard</h3><p>Wickets and outfields built to play true for clubs and academies.</p></div>
+      <div class="why-item rv"><h3>On-Time Delivery</h3><p>Clear timelines and regular progress updates from start to finish.</p></div>
+      <div class="why-item rv"><h3>Ongoing Care</h3><p>Maintenance support to keep your ground lush and match-ready.</p></div>
     </div>
   </div>
 </section>
 
 <section class="testi">
-  <div class="wrap quote-card rv">
-    <div class="mark">“</div>
-    <p class="quote" id="quote"></p>
-    <div class="who" id="who"></div>
-    <div class="dots" id="dots"></div>
+  <div class="wrap ig-band rv">
+    <div class="ig-ico"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></div>
+    <h2>Follow The Build</h2>
+    <p>See our grounds take shape — progress videos, finished projects and behind-the-scenes on Instagram.</p>
+    <a href="https://www.instagram.com/greenlinesportsbuilders/" target="_blank" rel="noopener" class="btn btn-lime">@greenlinesportsbuilders →</a>
   </div>
 </section>
 
@@ -427,13 +429,14 @@ footer{border-top:1px solid rgba(255,255,255,.08);padding:60px 0 30px}
         <div class="ci"><i>☎</i><span><a href="tel:+919446584386">+91 94465 84386</a><br><a href="tel:+919633127193">+91 96331 27193</a></span></div>
         <div class="ci"><i>⌖</i><span>No 16/959, 1st Floor, City Tower,<br>Wandoor, Malappuram, Kerala – 679328</span></div>
         <div class="ci"><i>#</i><span>GSTIN: 32BURPP5425Q1ZU</span></div>
+        <div class="ci"><i><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></i><a href="https://www.instagram.com/greenlinesportsbuilders/" target="_blank" rel="noopener">@greenlinesportsbuilders</a></div>
       </div>
       <form id="form">
         <div><label for="n">Name</label><input id="n" required placeholder="Your name"></div>
         <div><label for="o">Organisation</label><input id="o" placeholder="Club / School / Company"></div>
         <div><label for="e">Email</label><input id="e" type="email" required placeholder="you@email.com"></div>
         <div><label for="t">Project Type</label>
-          <select id="t"><option>Cricket Stadium / Ground</option><option>Turf Wicket / Nets</option><option>Football Pitch</option><option>Athletics Track</option><option>Courts / Indoor Hall</option><option>Multi-Sport Complex</option><option>Floodlighting</option></select></div>
+          <select id="t"><option>Cricket Turf Ground</option><option>Turf / Concrete Wicket</option><option>Practice Nets</option><option>Drainage Works</option><option>Floodlighting</option><option>Football Ground</option><option>Ground Maintenance</option></select></div>
         <div class="full"><label for="m">Tell us about it</label><textarea id="m" placeholder="Location, size, timeline, budget…"></textarea></div>
         <div class="full"><button class="btn btn-lime" type="submit">Send Enquiry →</button></div>
         <p class="sent" id="sent">✓ Thanks! We'll be in touch shortly.</p>
@@ -442,14 +445,20 @@ footer{border-top:1px solid rgba(255,255,255,.08);padding:60px 0 30px}
   </div>
 </section>
 
+<dialog class="pmodal" id="pmodal" aria-labelledby="pm-title">
+  <button class="pm-close" id="pm-close" aria-label="Close">✕</button>
+  <div id="pm-body"></div>
+</dialog>
+
 <footer>
   <div class="wrap">
     <div class="foot">
       <div>
         <a href="#top" class="logo"><svg class="logo-mark" viewBox="0 0 200 130" aria-hidden="true"><use href="#lg"/></svg>GREENLINE<span>SPORTS BUILDERS</span></a>
-        <p>Designing and building world-class cricket stadiums and sports venues.</p>
+        <p>Innovating sports infrastructure development. High-performance surfaces for the modern athlete.</p>
+        <a class="ig-link" href="https://www.instagram.com/greenlinesportsbuilders/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> @greenlinesportsbuilders</a>
       </div>
-      <div><h4>Services</h4><ul><li><a href="#services">Cricket Stadiums</a></li><li><a href="#services">Football Arenas</a></li><li><a href="#services">Athletic Tracks</a></li><li><a href="#services">Floodlighting</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="#services">Cricket Turf Grounds</a></li><li><a href="#services">Wicket Construction</a></li><li><a href="#services">Practice Nets</a></li><li><a href="#services">Floodlighting</a></li><li><a href="#services">Football Grounds</a></li></ul></div>
       <div><h4>Company</h4><ul><li><a href="#why">About Us</a></li><li><a href="#projects">Projects</a></li><li><a href="#process">Process</a></li><li><a href="mailto:careers@greenlinesb.com">Careers</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="mailto:info@greenlinesb.com">info@greenlinesb.com</a></li><li><a href="mailto:careers@greenlinesb.com">careers@greenlinesb.com</a></li><li><a href="mailto:greenlinesportsbuilders@gmail.com">greenlinesportsbuilders@gmail.com</a></li><li><a href="tel:+919446584386">+91 94465 84386</a></li><li><a href="tel:+919633127193">+91 96331 27193</a></li><li>City Tower, Wandoor, Malappuram,<br>Kerala – 679328</li></ul></div>
     </div>
@@ -457,7 +466,47 @@ footer{border-top:1px solid rgba(255,255,255,.08);padding:60px 0 30px}
   </div>
 </footer>
 
+<script src="projects.js"></script>
 <script>
+// projects
+(function(){
+  const P=window.PROJECTS||[], grid=document.getElementById('pcards'), dlg=document.getElementById('pmodal'), body=document.getElementById('pm-body');
+  const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const pin='<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>';
+  grid.innerHTML=P.map((p,i)=>`
+    <article class="pcard rv">
+      <button class="pc-img" data-i="${i}" aria-label="View ${esc(p.title)}"><img src="${esc(p.image)}" alt="${esc(p.title)}, ${esc(p.location)}" loading="lazy"></button>
+      <div class="pc-body">
+        <span class="tag">${esc(p.category)}</span>
+        <h3>${esc(p.title)}</h3>
+        <p class="loc">${pin}${esc(p.location)}</p>
+        <p class="sum">${esc(p.summary)}</p>
+        <div class="pc-stats">${(p.stats||[]).map(s=>`<div><b>${esc(s[0])}</b><small>${esc(s[1])}</small></div>`).join('')}</div>
+        <button class="btn btn-ghost pc-more" data-i="${i}">View Project →</button>
+      </div>
+    </article>`).join('');
+  function open(i){
+    const p=P[i];
+    body.innerHTML=`
+      <img class="pm-img" src="${esc(p.image)}" alt="${esc(p.title)} project showcase">
+      <div class="pm-text">
+        <span class="tag">${esc(p.category)}</span>
+        <h2 id="pm-title">${esc(p.title)}</h2>
+        <p class="loc">${pin}${esc(p.location)}</p>
+        <dl class="pm-meta">${p.client?`<div><dt>Client</dt><dd>${esc(p.client)}</dd></div>`:''}<div><dt>Category</dt><dd>${esc(p.category)}</dd></div><div><dt>Built by</dt><dd>Greenline Sports Builders</dd></div></dl>
+        ${(p.overview||[]).map(t=>`<p>${esc(t)}</p>`).join('')}
+        ${(p.sections||[]).map(s=>`<h4>${esc(s.heading)}</h4>${s.items?`<ul>${s.items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}${s.text?`<p>${esc(s.text)}</p>`:''}`).join('')}
+        <a href="#contact" class="btn btn-lime" id="pm-cta">Plan A Similar Project →</a>
+      </div>`;
+    dlg.showModal(); dlg.scrollTop=0; document.body.style.overflow='hidden';
+    document.getElementById('pm-cta').onclick=()=>dlg.close();
+  }
+  grid.addEventListener('click',e=>{const b=e.target.closest('[data-i]'); if(b) open(+b.dataset.i)});
+  document.getElementById('pm-close').onclick=()=>dlg.close();
+  dlg.addEventListener('click',e=>{if(e.target===dlg) dlg.close()});
+  dlg.addEventListener('close',()=>document.body.style.overflow='');
+})();
+
 // nav
 const nav=document.getElementById('nav');
 addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
@@ -478,24 +527,6 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{
 }),{threshold:.15});
 document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
 
-// project filter
-document.getElementById('filters').onclick=e=>{
-  const b=e.target.closest('button');if(!b)return;
-  document.querySelectorAll('#filters button').forEach(x=>x.classList.toggle('on',x===b));
-  document.querySelectorAll('.proj').forEach(p=>p.classList.toggle('hide',b.dataset.f!=='all'&&p.dataset.c!==b.dataset.f));
-};
-
-// testimonials (sample text — replace with real client quotes)
-const T=[
-  ["The square they prepared plays true from day one — pace, bounce and carry exactly as we asked. Our players love it.","Head Curator","State Cricket Association"],
-  ["On time, on budget, and the floodlights are stunning on broadcast. A genuinely professional team.","Project Director","Metro Sports Authority"],
-  ["They turned an empty plot into a full sports campus for our 3,000 students. Every detail was thought through.","Principal","Greenfield International School"]
-];
-const q=document.getElementById('quote'),w=document.getElementById('who'),d=document.getElementById('dots');let cur=0,timer;
-T.forEach((_,i)=>{const b=document.createElement('button');b.setAttribute('aria-label','Testimonial '+(i+1));b.onclick=()=>show(i,true);d.appendChild(b)});
-function show(i,user){cur=i;q.style.opacity=0;setTimeout(()=>{q.textContent=T[i][0];w.innerHTML='<b>'+T[i][1]+'</b>'+T[i][2];q.style.opacity=1},250);
-  [...d.children].forEach((b,j)=>b.classList.toggle('on',j===i));if(user){clearInterval(timer);timer=setInterval(()=>show((cur+1)%T.length),6000)}}
-show(0);timer=setInterval(()=>show((cur+1)%T.length),6000);
 
 // form (front-end only — hook to your email service/backend)
 document.getElementById('form').onsubmit=e=>{e.preventDefault();document.getElementById('sent').style.display='block';e.target.reset()};
